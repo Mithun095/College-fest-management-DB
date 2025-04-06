@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Fest System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tab-container">
+    <button class="tab-button active" onclick="showTab('formTab')">Data Entry</button>
+    <button class="tab-button" onclick="showTab('queryTab')">Query Results</button>
+  </div>
+
+  <div id="formTab" class="tab-content">
+    <div class="form-section">
+      <h2>Add Student</h2>
+      <form id="studentForm">
+        <input type="text" placeholder="Name" name="name" required>
+        <input type="email" placeholder="Email" name="email" required>
+        <input type="text" placeholder="Phone" name="phone" required>
+        <input type="text" placeholder="College" name="college" required>
+        <button type="submit">Add Student</button>
+      </form>
+    </div>
+
+    <div class="form-section">
+      <h2>Add Event</h2>
+      <form id="eventForm">
+        <input type="text" placeholder="Event Name" name="eventName" required>
+        <input type="date" name="eventDate" required>
+        <input type="text" placeholder="Venue" name="venue" required>
+        <input type="number" placeholder="Max Participants" name="maxParticipants" required>
+        <input type="number" placeholder="Sponsor ID" name="sponsorID">
+        <button type="submit">Add Event</button>
+      </form>
+    </div>
+
+    <div class="form-section">
+      <h2>Register Student</h2>
+      <form id="registrationForm">
+        <input type="number" placeholder="Student ID" name="studentID" required>
+        <input type="number" placeholder="Event ID" name="eventID" required>
+        <input type="number" step="0.01" placeholder="Payment Amount (optional)" name="amount">
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    
+
+    <div class="form-section">
+      <h2>Submit Feedback</h2>
+      <form id="feedbackForm">
+        <input type="number" placeholder="Student ID" name="studentID" required>
+        <input type="number" placeholder="Event ID" name="eventID" required>
+        <textarea placeholder="Comments" name="comments" required></textarea>
+        <input type="number" placeholder="Rating (1-5)" name="rating" min="1" max="5" required>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="queryTab" class="tab-content hidden">
+    <div class="button-container">
+      <h2>View Data Tables</h2>
+      <div class="test">
+      <button id="b1" onclick="fetchData('students')">Show Students</button>
+      <button id="b1" onclick="fetchData('events')">Show Events</button>
+      <button id="b1" onclick="fetchData('registrations')">Show Registrations</button>
+      <button id="b1" onclick="fetchData('payments')">Show Payments</button>
+      <button id="b1" onclick="fetchData('feedback')">Show Feedback</button>
+      <button id="b1" onclick="fetchData('sponsorshipstats')">Show Sponsorship Stats</button>
+      </div>
+      <h2>Advanced Queries</h2>
+      <button id="b2" onclick="fetchData('fiveStarEvents')">Which events have 5-star feedback?</button>
+      <button id="b2" onclick="fetchData('highPayers')">List students who paid more than ₹500 for events that were sponsored by any sponsor </button>
+      <button id="b2" onclick="fetchData('auditoriumFeedback')">No Feedback for events</button>
+      <button id="b2" onclick="fetchData('infosysBigEvents')">Which students registered and paid for large events (more than 100 participants) that were sponsored by Infosys? </button>
+      <button id="b2" onclick="fetchData('goodRatedLargeEvents')">Which students gave feedback with a rating above 3 for events that allowed at least 80 participants? </button>
+    </div>
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
