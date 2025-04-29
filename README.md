@@ -11,3 +11,9 @@ This project is a full-stack web application designed to efficiently manage and 
 👨‍💼 Sponsor statistics and organizer management
 
 📊 Advanced analytics using SQL JOINs, triggers, and custom queries
+
+
+here make sure to put your database credentials in .env file properly
+
+then to start the project
+ # node index.js   
