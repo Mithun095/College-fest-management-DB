@@ -16,4 +16,4 @@ This project is a full-stack web application designed to efficiently manage and 
 here make sure to put your database credentials in .env file properly
 
 then to start the project
- ## node index.js   
+ - node index.js   
